@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nur Ramadan Planner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --deep-pink: #9d174d;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
+        .font-dancing { font-family: 'Dancing Script', cursive; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        
+        /* Glowing effects */
+        .glow-gold {
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+        }
+        .glow-star {
+            filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8));
+        }
+
+        /* Animations */
+        @keyframes sway {
+            0% { transform: rotate(-3deg); }
+            100% { transform: rotate(3deg); }
+        }
+        .animate-sway {
+            animation: sway 3s ease-in-out infinite alternate;
+            transform-origin: top center;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+        .animate-twinkle {
+            animation: twinkle 4s infinite ease-in-out;
+        }
+
+        @keyframes netflix-zoom {
+            0% { transform: scale(0.8); opacity: 0; filter: blur(10px); }
+            50% { transform: scale(1); opacity: 1; filter: blur(0); }
+            100% { transform: scale(1.2); opacity: 0; filter: blur(5px); }
+        }
+        .animate-netflix {
+            animation: netflix-zoom 2.5s forwards cubic-bezier(0.7, 0, 0.3, 1);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4"
+  }
+}
+</script>
+</head>
+<body class="min-h-screen">
+    <div id="root"></div>
+</body>
+</html>
